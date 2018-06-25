@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XF.CONTATO.ContatoView">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Image x:Name="foto" Source="person.png" WidthRequest="200" HeightRequest="100"></Image>
+            <Button x:Name="btnCamera" Text="Alterar Imagem" Clicked="altera_imagem" />
+            <Button x:Name="btnCoordenada" Text="Localizar" Clicked="busca_coordenada" />
+            <Label x:Name="lbLatitude"/>
+            <Label x:Name="lbLongitude"/>
+
+            <Button x:Name="btnVerMapa" Text="Ver mapa" Clicked="mostra_mapa"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

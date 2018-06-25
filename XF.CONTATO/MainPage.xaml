@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:XF.CONTATO" 
+             x:Name="paginaInicial"
+             x:Class="XF.CONTATO.MainPage">
+    
+    <StackLayout Padding="20">
+        <ListView x:Name="listContatos" ItemsSource="{Binding Contatos}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Ligar"
+                                      Command="{Binding BindingContext.CallCMD, Source={x:Reference paginaInicial}}"
+                                      CommandParameter="{Binding .}"/>
+                                
+                            <MenuItem
+                                    Text="Editar"
+                                    Command="{Binding BindingContext.EditCMD, Source={x:Reference paginaInicial}}"
+                                    CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <StackLayout>
+                            <Label Text="{Binding Nome}" Style="{StaticResource LabelViewCellPai}"></Label>
+                            <Label Text="{Binding PhoneNumber}" Style="{StaticResource LabelViewCellFilho}"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
